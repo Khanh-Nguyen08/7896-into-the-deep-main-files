@@ -30,12 +30,7 @@ public class SigmaSixSevenAuto extends LinearOpMode {
 
         if (isStopRequested()) return;
 
-        Action path = drivetrain.actionBuilder(startPos)
-                        //.splineTo(new Vector2d(30, 30), Math.PI / 2)
-                        //.splineTo(new Vector2d(0, 60), Math.PI)
-                        .lineToX(30)
-                        .build();
-
-        Actions.runBlocking(new SequentialAction(path));
+        drivetrain.setDrivePowers(new PoseVelocity2d(new Vector2d(0, 20), 0));
+        //drivetrain.setDrivePowers(new PoseVelocity2d(new Vector2d(-20, 0), 0));
     }
 }
